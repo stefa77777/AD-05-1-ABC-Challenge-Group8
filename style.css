@@ -1,3 +1,5 @@
+
+
 .card-container {
   perspective: 1000px;
   min-height: 200px;
@@ -22,7 +24,7 @@
   left: 0;
   backface-visibility: hidden;
   border-radius: 0.75rem;
-  background-color: #ffffff;
+  background-color: #FAF0DC;
 }
 
 /* Dorso volteado inicialmente 180deg */
