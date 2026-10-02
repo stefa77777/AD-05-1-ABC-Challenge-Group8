@@ -3,51 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APRENDE EL ABC</title>
+  <title>Aprende el Abecedario</title>
   
+  <!-- CDN Bootstrap CSS 5.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Archivo CSS Personalizado -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
-  
-  <nav class="navbar navbar-dark bg-dark px-4 py-3 sticky-top">
-    <span class="navbar-brand mb-0 h1">APRENDE EL ABC</span>
-    <span class="navbar-text text-white fs-5">
-      Letras descubiertas: <span id="contador" class="badge bg-primary">0</span>/26
-    </span>
+  <!-- RF-01 & RF-04: Navbar con Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+    <div class="container">
+      <span class="navbar-brand fw-bold fs-3">Aprende el Abecedario</span>
+      <div class="ms-auto bg-white bg-opacity-25 text-white px-3 py-1 rounded-pill fw-semibold">
+        Letras descubiertas: <span id="contador">0</span> / 26
+      </div>
+    </div>
   </nav>
 
-  <div class="container my-4">
-   
+  <!-- RF-05: Botones de Filtro -->
+  <main class="container my-4 flex-grow-1">
     <div class="d-flex justify-content-center gap-2 mb-4">
-      <button class="btn btn-outline-primary active" onclick="filtrar('todas')">Todas</button>
+      <button class="btn btn-outline-primary rounded-pill px-4 fw-bold" onclick="filtrar('todas')">Todas</button>
+      <button class="btn btn-outline-primary rounded-pill px-4 fw-bold" onclick="filtrar('vocales')">Vocales</button>
     </div>
 
-    
-    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3" id="galeria">
-      <div class="col card-col" data-tipo="vocal">
-  <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
-    <div class="card-frente p-4 bg-white rounded">
-      <h1 class="display-3 fw-bold text-primary mb-0">A</h1>
-    </div>
-    <div class="card-dorso p-2 bg-white rounded d-none">
-      <img src="https://img.magnific.com/vector-gratis/ilustracion-vectorial-colorida-mitades-aguacate_1308-181983.jpg?semt=ais_hybrid&w=740&q=80" class="img-fluid rounded mb-2" style="max-height: 120px; object-fit: contain;" alt="Aguacate">
-      <h5 class="fw-bold text-dark">Aguacate</h5>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
+    <!-- RF-02 & RF-03: Galería de 26 cards -->
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 galeria">
 
+      <!-- A -->
+      <div class="col card-container" data-tipo="vocal">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">A</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=300" class="img-fluid rounded mb-2" alt="Manzana">
+            <h5 class="card-title text-dark m-0 fs-6">Manzana</h5>
+          </div>
+        </div>
+      </div>
 
-  <footer id="equipo" class="bg-dark text-white text-center py-3 mt-5">
-    <h5>Team</h5>
-    <p class="mb-0">stefania redondo, alejandra carreño, dayana vallejo, juan calderon</p>
+      <!-- B -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">B</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1559253664-ca249d4608c6?w=300" class="img-fluid rounded mb-2" alt="Barco">
+            <h5 class="card-title text-dark m-0 fs-6">Barco</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">C</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300" class="img-fluid rounded mb-2" alt="Casa">
+            <h5 class="card-title text-dark m-0 fs-6">Casa</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">D</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?w=300" class="img-fluid rounded mb-2" alt="Delfín">
+            <h5 class="card-title text-dark m-0 fs-6">Delfín</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- E -->
+      <div class="col card-container" data-tipo="vocal">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">E</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=300" class="img-fluid rounded mb-2" alt="Elefante">
+            <h5 class="card-title text-dark m-0 fs-6">Elefante</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- F -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">F</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300" class="img-fluid rounded mb-2" alt="Flor">
+            <h5 class="card-title text-dark m-0 fs-6">Flor</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- G -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">G</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300" class="img-fluid rounded mb-2" alt="Gato">
+            <h5 class="card-title text-dark m-0 fs-6">Gato</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- H -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">H</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1521449256184-170b222c3747?w=300" class="img-fluid rounded mb-2" alt="Helado">
+            <h5 class="card-title text-dark m-0 fs-6">Helado</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- I -->
+      <div class="col card-container" data-tipo="vocal">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">I</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300" class="img-fluid rounded mb-2" alt="Iguana">
+            <h5 class="card-title text-dark m-0 fs-6">Iguana</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- J -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">J</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=300" class="img-fluid rounded mb-2" alt="Jirafa">
+            <h5 class="card-title text-dark m-0 fs-6">Jirafa</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- K -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">K</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1540573133985-77871367e2a4?w=300" class="img-fluid rounded mb-2" alt="Koala">
+            <h5 class="card-title text-dark m-0 fs-6">Koala</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- L -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">L</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=300" class="img-fluid rounded mb-2" alt="León">
+            <h5 class="card-title text-dark m-0 fs-6">León</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- M -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">M</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1535268647132-b40726154685?w=300" class="img-fluid rounded mb-2" alt="Mono">
+            <h5 class="card-title text-dark m-0 fs-6">Mono</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- N -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">N</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=300" class="img-fluid rounded mb-2" alt="Nube">
+            <h5 class="card-title text-dark m-0 fs-6">Nube</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- O -->
+      <div class="col card-container" data-tipo="vocal">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">O</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=300" class="img-fluid rounded mb-2" alt="Oso">
+            <h5 class="card-title text-dark m-0 fs-6">Oso</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- P -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">P</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=300" class="img-fluid rounded mb-2" alt="Perro">
+            <h5 class="card-title text-dark m-0 fs-6">Perro</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">Q</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=300" class="img-fluid rounded mb-2" alt="Queso">
+            <h5 class="card-title text-dark m-0 fs-6">Queso</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- R -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">R</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=300" class="img-fluid rounded mb-2" alt="Rana">
+            <h5 class="card-title text-dark m-0 fs-6">Rana</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- S -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">S</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=300" class="img-fluid rounded mb-2" alt="Sol">
+            <h5 class="card-title text-dark m-0 fs-6">Sol</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- T -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">T</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=300" class="img-fluid rounded mb-2" alt="Tigre">
+            <h5 class="card-title text-dark m-0 fs-6">Tigre</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- U -->
+      <div class="col card-container" data-tipo="vocal">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">U</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1598170845058-12ef4a457511?w=300" class="img-fluid rounded mb-2" alt="Uvas">
+            <h5 class="card-title text-dark m-0 fs-6">Uvas</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- V -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">V</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?w=300" class="img-fluid rounded mb-2" alt="Vaca">
+            <h5 class="card-title text-dark m-0 fs-6">Vaca</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- W -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">W</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=300" class="img-fluid rounded mb-2" alt="Waffle">
+            <h5 class="card-title text-dark m-0 fs-6">Waffle</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- X -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">X</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300" class="img-fluid rounded mb-2" alt="Xilófono">
+            <h5 class="card-title text-dark m-0 fs-6">Xilófono</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Y -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">Y</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300" class="img-fluid rounded mb-2" alt="Yate">
+            <h5 class="card-title text-dark m-0 fs-6">Yate</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Z -->
+      <div class="col card-container" data-tipo="consonante">
+        <div class="card h-100 text-center shadow-sm" onclick="voltear(this)">
+          <div class="card-frente d-flex align-items-center justify-content-center">
+            <h1 class="display-3 fw-bold text-primary m-0">Z</h1>
+          </div>
+          <div class="card-dorso d-flex flex-column align-items-center justify-content-center p-2">
+            <img src="https://images.unsplash.com/photo-1551101652-a5bcf47a6ab6?w=300" class="img-fluid rounded mb-2" alt="Zorro">
+            <h5 class="card-title text-dark m-0 fs-6">Zorro</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- RF-06: Sección del Equipo con Bootstrap -->
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <h4 class="mb-3">Equipo de Rescate</h4>
+      <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <span class="badge bg-secondary fs-6 fw-normal px-3 py-2">Juan Pablo Calderon</span>
+        <span class="badge bg-secondary fs-6 fw-normal px-3 py-2">Dayana Marcela Vallejo</span>
+        <span class="badge bg-secondary fs-6 fw-normal px-3 py-2">Stefania Redondo</span>
+        <span class="badge bg-secondary fs-6 fw-normal px-3 py-2">Alejandra Carreño</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
-
+  <!-- CDN Bootstrap JS Bundle (incluye Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Lógica en JS -->
+  <script src="script.js"></script>
 </body>
 </html>
